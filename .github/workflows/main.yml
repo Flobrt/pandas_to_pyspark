@@ -20,3 +20,5 @@ jobs:
       run: pre-commit install
     - name: Run pre-commit hooks
       run: pre-commit run --all-files
+    - name: pytest
+      run: pytest
