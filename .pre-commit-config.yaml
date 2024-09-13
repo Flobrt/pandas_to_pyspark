@@ -1,9 +1,11 @@
 repos:
-  - repo: local
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.3.0
     hooks:
-      - id: run-pytest
-        name: Run Pytest
-        entry: pytest
-        language: system
-        types: [python]
-        always_run: true
+    -   id: check-yaml
+    -   id: end-of-file-fixer
+    -   id: trailing-whitespace
+-   repo: https://github.com/psf/black
+    rev: 22.10.0
+    hooks:
+    -   id: black
