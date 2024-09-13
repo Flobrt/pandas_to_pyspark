@@ -14,9 +14,9 @@ jobs:
         python-version: '3.8' # Spécifiez la version de Python dont vous avez besoin
     - name: Install pre-commit
       run: pip install pre-commit
+    - name: Install dependances
+      run: pip install -r requirements.txt
     - name: Install hooks
       run: pre-commit install
-    - name: Install dependances
-      run: pip install -r requirement.txt
     - name: Run pre-commit hooks
       run: pre-commit run --all-files
