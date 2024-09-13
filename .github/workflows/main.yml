@@ -1,6 +1,8 @@
 name: pre-commit
 
-on: [push]
+on:
+  push:
+    branches: [main] # Déclenche l'action uniquement sur la branche main (ou ajustez si nécessaire)
 
 jobs:
   pre-commit:
@@ -8,4 +10,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-python@v3
-    - uses: pre-commit/action@v3.0.1
+      with:
+        python-version: '3.8' # Spécifiez la version de Python dont vous avez besoin
+    - name: Install pre-commit
+      run: pip install pre-commit
+    - name: Install hooks
+      run: pre-commit install
+    - name: Run pre-commit hooks
+      run: pre-commit run --all-files
