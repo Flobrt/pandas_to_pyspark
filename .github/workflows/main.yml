@@ -17,6 +17,6 @@ jobs:
     - name: Install hooks
       run: pre-commit install
     - name: Install dependances
-      run: pip install -r requirements.txt
+      run: pip install -r requirement.txt
     - name: Run pre-commit hooks
       run: pre-commit run --all-files
